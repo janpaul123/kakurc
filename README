@@ -1,0 +1,5 @@
+kakurc stands for klik-aan-klik-uit room control, which is a home automation system available in the Netherlands, similar to X10 but with RF.
+
+This piece of software allows users of the  system - typically students with a single room or few rooms - to control devices using a webinterface.
+
+It's also possible to hook up webcams, so you can actually see the consequences of hitting buttons, or simply to keep an eye on your property and surroundings.

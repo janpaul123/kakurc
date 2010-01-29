@@ -1,0 +1,7 @@
+This is a simple Visual Basic 6.0 program that allows interfacing with the KAKU DLL. You'll still need to install the drivers supplied by the manufacturer.
+
+Usage: kaku.exe <code> <state> where 0 <= code <= 255 and state = {0,1}. 
+
+The code corresponds with old remote controls, where A1=0, B1=1, C1=2, etc. Also refer to the PDF on the cd you got from the manufacturer.
+
+State is simply on or off, but beware when sending an on-signal to a dimmer, as it might go dimming. It's better to first send an off-signal just to be sure. 
