@@ -27,6 +27,12 @@ $settings['menu.options']              = array();
 // title of the page
 $settings['general.title']             = 'Room control';
 
+// specify whether or not this is a demo (executing commands will be disabled)
+$settings['general.demo']              = true;
+
+// show a message when this is a demo
+$settings['general.demomessage']       = 'This is a non-functional demo!';
+
 
 // MENU SETTINGS
 // possible settings, including the command to run
@@ -63,10 +69,34 @@ $settings['menu.options'][]            = array(
                                                'id'         => 1,
                                               );
 $settings['menu.options'][]            = array(
+                                               'title'      => 'Christmas decorations',
+                                               'parent'     => 'lights',
+                                               'types'      => array('on', 'off'),
+                                               'id'         => 2,
+                                              );
+$settings['menu.options'][]            = array(
+                                               'title'      => 'Spots',
+                                               'parent'     => 'lights',
+                                               'types'      => array('on', 'off'),
+                                               'id'         => 3,
+                                              );
+$settings['menu.options'][]            = array(
+                                               'title'      => 'Television',
+                                               'parent'     => 'dev',
+                                               'types'      => array('on', 'off'),
+                                               'id'         => 10,
+                                              );
+$settings['menu.options'][]            = array(
                                                'title'      => 'Photoframe',
                                                'parent'     => 'dev',
                                                'types'      => array('on', 'off'),
-                                               'id'         => 2,
+                                               'id'         => 11,
+                                              );
+$settings['menu.options'][]            = array(
+                                               'title'      => 'Espresso machine',
+                                               'parent'     => 'dev',
+                                               'types'      => array('on', 'off'),
+                                               'id'         => 11,
                                               );
 
 

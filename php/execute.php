@@ -30,4 +30,4 @@ foreach($settings['menu.options'][$_GET['option']] as $key => $value)
 }
 
 // execute the command
-exec($command);
+if (!$settings['general.demo']) exec($command);

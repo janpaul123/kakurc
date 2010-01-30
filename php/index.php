@@ -52,6 +52,14 @@ require_once('init.php');
 	<body>
 		<div id="container">
 			<h1><?php echo $settings['general.title'] ?></h1>
+			
+			<?php 
+				if ($settings['general.demo'])
+				{
+					echo('<div id="demo">' . $settings['general.demomessage'] . '</div>');
+				}
+			?>
+			
 			<div id="menu">
 				<?php 
 					foreach ($settings['menu.titles'] as $menuId => $title)
@@ -78,6 +86,7 @@ require_once('init.php');
 					}
 				?>
 			</div>
+			
 			<div id="webcams">
 				<?php 
 					$styleDivAllowed   = array('top', 'bottom', 'left', 'right', 'float');

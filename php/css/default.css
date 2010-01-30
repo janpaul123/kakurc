@@ -55,11 +55,18 @@ img {
 }
 
 h1 {
+	position: absolute;
 	text-align: center;
 	font-size: 17px;
 	font-weight: bold;
-	margin-top: 15px;
-	margin-bottom: 0px;
+	top: 4px;
+	width: 100%;
+}
+
+#demo {
+	position: absolute;
+	top: 16px;
+	left: 22px;
 }
 
 #menu {
