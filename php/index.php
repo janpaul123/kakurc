@@ -26,13 +26,16 @@ require_once('init.php');
 		<link rel="stylesheet" href="css/default.css?<?php echo $version;?>" type="text/css" />
 		
 		<script type="text/javascript" src="js/jquery-1.4.min.js?<?php echo $version;?>"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8rc1.custom.min.js?<?php echo $version;?>"></script>
 		<script type="text/javascript" src="js/KakuRC.js?<?php echo $version;?>"></script>
 		
 		<script type="text/javascript">
 		$(document).ready(function(){
 			KakuRC.init();
 
-			<?php 
+			KakuRC.setWebcamsInterval  ( <?php echo($settings["webcams.interval"]);           ?> );
+			
+			<?php
 				foreach ($settings['menu.options'] as $optionId => $option)
 				{
 					foreach($option['types'] as $buttonId)
@@ -41,6 +44,11 @@ require_once('init.php');
 							. "','menu-" . trim($optionId) . '-' . trim($buttonId) . "', '"
 							. trim($optionId) . "','" . trim($buttonId) . "');"); 
 					}
+				}
+				
+				foreach ($settings['webcams.cams'] as $nr => $cam)
+				{
+					echo('KakuRC.addWebcam("webcam-' . $nr . '", "' . $cam['url'] . '");');
 				}
 			?>
 			
@@ -74,7 +82,7 @@ require_once('init.php');
 								foreach($buttons as $buttonId)
 								{
 									$button = $settings['menu.types'][$buttonId];
-									echo('<a  id="menu-' . trim($optionId) . '-' . trim($buttonId) . 
+									echo('<a id="menu-' . trim($optionId) . '-' . trim($buttonId) . 
 										'" class="button ' . $button['class'] . '" href="#">');
 									echo($button['title'] . '</a>');
 								}
@@ -88,6 +96,11 @@ require_once('init.php');
 			</div>
 			
 			<div id="webcams">
+				<div class="slider">
+					<div id="webcam-interval">1 sec</div>
+					<div id="webcam-slider"></div>
+					<div id="webcam-timer"></div>
+				</div>
 				<?php 
 					$styleDivAllowed   = array('top', 'bottom', 'left', 'right', 'float');
 					$styleImageAllowed = array('width', 'height', 'max-width', 'max-height', 'min-width', 'min-height');
