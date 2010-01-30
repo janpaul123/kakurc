@@ -1,0 +1,240 @@
+/*
+ * kakurc, room control software
+ * Copyright (C) 2010
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
+body {
+	background-color          : #111111;
+	font-family               : Bitstream Vera,Vera,Verdana,Arial;
+	color                     : #EEEEEE;
+	text-shadow               : 1px 1px 1px black;
+	background: -webkit-gradient(linear, 50% 0, 50% 100%, from(black), to(#222222));
+	background: -moz-linear-gradient(top, black, #222222);
+}
+
+ul {
+	margin                    : 0px;
+	padding                   : 0px;
+}
+
+li {
+	margin                    : 0px;
+	padding                   : 0px;
+}
+
+a {
+	text-decoration           : none;
+	color                     : white;
+}
+
+a:hover, a:focus {
+	text-decoration           : underline;
+}
+
+img {
+	border                    : none;
+}
+
+#container {
+	position: absolute;
+	width: 1000px;
+	margin-left: -500px;
+	left: 50%;
+}
+
+h1 {
+	text-align: center;
+	font-size: 17px;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+
+#menu {
+	position: absolute;
+	top: 60px;
+	left: 20px;
+	width: 400px;
+}
+
+#menu h2 {
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+#menu ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+#menu ul:last-child {
+	margin-bottom: 0px;
+}
+
+#menu ul li {
+	font-weight: normal;
+	text-align: left;
+    background-color: #333333;
+    border: 1px solid white;
+    display: block;
+    font-size: 17px;
+    margin-bottom: -1px;
+    padding: 12px 10px;
+}
+
+#menu ul li:first-child {
+	border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+}
+
+#menu ul li:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	-moz-border-radius-bottomright: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+#menu ul img.loader {
+	float:right;
+	margin-top: 4px;
+	margin-right: 10px;
+	display: none;
+}
+
+#menu ul a.button {
+	font-size: 15px;
+	padding: 2px 6px;
+	float: right;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    text-decoration: none;
+    background-color: #2222BB;
+    margin-right: 8px;
+}
+
+#menu ul a.button:first-child {
+	margin-right: 0px;
+}
+
+#menu ul a.button:hover, #menu ul a.button:focus {
+	background-color: #3333EE;
+}
+
+#menu ul a.on {
+	background-color: #00BB00;
+}
+
+#menu ul a.off {
+	background-color: #DD0000;
+}
+
+#menu ul a.on:hover, #menu ul a.on:focus  {
+	background-color: #00DD00;
+}
+
+#menu ul a.off:hover, #menu ul a.off:focus  {
+	background-color: #FA0000;
+}
+
+#webcams {
+	position: absolute;
+	top: 60px;
+	right: 20px;
+	width: 400px;
+	text-align: right;
+}
+
+#webcams .container {
+	float                     : left;
+	z-index                   : -2;
+	margin-right              : 50px;
+	margin-bottom             : 20px;
+}
+
+#webcams .container:last-child {
+	margin-bottom: 0px;
+}
+
+#webcams .holder {
+	padding                   : 15px;
+	position                  : relative;
+}
+
+#webcams .border {
+	position                  : absolute;
+	top                       : 0px;
+	left                      : 0px;
+	width                     : 100%;
+	height                    : 100%;
+	border-radius             : 8px;
+	-moz-border-radius        : 8px;
+	-webkit-border-radius        : 8px;
+	background-color          : #333333;
+	opacity                   : 0.8;
+	z-index                   : -1;
+	border: 1px solid white;
+}
+
+#webcams .title {
+	position                  : absolute;
+	bottom                    : 5px;
+	left                      : 10%;
+	width                     : 80%;
+	opacity                   : 0.9;
+	z-index                   : 3;
+	text-align                : center;
+	font-size                 : 18px;
+	text-shadow               : #222222 0px 0px 3px;
+}
+
+#webcams img {
+	z-index                   : 2;
+}
+
+#webcams img.error {
+	display                   : none;
+	position                  : absolute;
+	top                       : 50%;
+	left                      : 50%;
+	margin-top                : -8px;
+	margin-left               : -8px;
+	z-index                   : 5;
+	opacity                   : 1;  
+}
+
+#webcams .shadow {
+	position                  : absolute;
+	top                       : 0px;
+	left                      : 0px;
+	width                     : 100%;
+	height                    : 100%;
+	background-color          : #151515;
+	opacity                   : 0.7;
+	z-index                   : 4;
+	border-radius             : 8px;
+	-moz-border-radius        : 8px;
+	-webkit-border-radius     : 8px;
+	display                   : none;
+}

@@ -1,0 +1,97 @@
+<?php
+/*
+ * kakurc, room control software
+ * Copyright (C) 2010
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+// initialization
+error_reporting(0);
+$settings = array();
+$settings['menu.types']                = array();
+$settings['menu.titles']               = array();
+$settings['menu.options']              = array();
+
+// GENERAL SETTINGS
+// title of the page
+$settings['general.title']             = 'Room control';
+
+
+// MENU SETTINGS
+// possible settings, including the command to run
+// specify a class for custom styling, or don't to get a default button (blue)
+$settings['menu.types']['on']          = array(
+                                               'command'    => 'C:/kaku/Kaku.exe {id} 1',
+                                               'class'      => 'on',
+                                               'title'      => 'ON',
+                                              );
+$settings['menu.types']['off']         = array(
+                                               'command'    => 'C:/kaku/Kaku.exe {id} 0',
+                                               'class'      => 'off',
+                                               'title'      => 'OFF',
+                                              );
+
+// list of the main menu titles
+$settings['menu.titles']['lights']     = 'Lights';
+$settings['menu.titles']['dev']        = 'Devices';
+
+// all menu options; specify to which menu the item belongs by using parent, and which
+// buttons you want to show using 'types'
+// also, any open value in the commands of the types (ie. {id} or {whatever}) you can fill
+// in here (using 'id' => ... or 'whatever' => ...)
+$settings['menu.options'][]            = array(
+                                               'title'      => 'Main light',
+                                               'parent'     => 'lights',
+                                               'types'      => array('on', 'off'),
+                                               'id'         => 0,
+                                              );
+$settings['menu.options'][]            = array(
+                                               'title'      => 'Reading light',
+                                               'parent'     => 'lights',
+                                               'types'      => array('on', 'off'),
+                                               'id'         => 1,
+                                              );
+$settings['menu.options'][]            = array(
+                                               'title'      => 'Photoframe',
+                                               'parent'     => 'dev',
+                                               'types'      => array('on', 'off'),
+                                               'id'         => 2,
+                                              );
+
+
+// WEBCAM SETTINGS 
+// default interval for updating webcams, in ms
+$settings['webcams.interval']          = 5000;
+
+// array of webcams
+// you can use 'url' (required), 'title', (min/max-)'width', (min/max-)'height', 
+// 'left', 'right', 'top', 'bottom', 'float'
+// you can also set 'interval' for a custom interval
+$settings['webcams.cams'][]            = array(
+                                               'title'      => 'Grote Markt, Groningen',
+                                               'url'        => 'http://www.rtvnoord.nl/webcam/RTVN-GM.jpg',
+                                               'min-width'  => '150px',
+                                               'max-width'  => '280px',
+                                               'min-height' => '100px',
+                                               'max-height' => '180px',
+                                              );
+                                              
+$settings['webcams.cams'][]            = array(
+                                               'title'      => 'Stichting SCN, Hereweg, Groningen',
+                                               'url'        => 'http://www.zedah.org:8888/',
+                                               'min-width'  => '150px',
+                                               'max-width'  => '280px',
+                                               'min-height' => '100px',
+                                               'max-height' => '180px',
+                                              );
