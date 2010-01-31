@@ -98,8 +98,9 @@ require_once('init.php');
 			<div id="webcams">
 				<div class="slider">
 					<div id="webcam-interval">1 sec</div>
-					<div id="webcam-slider"></div>
-					<div id="webcam-timer"></div>
+					<div id="webcam-slider">
+						<div id="webcam-timer"></div>
+					</div>
 				</div>
 				<?php 
 					$styleDivAllowed   = array('top', 'bottom', 'left', 'right', 'float');

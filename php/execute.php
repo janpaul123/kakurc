@@ -20,14 +20,19 @@ session_start();
 require_once("init.php"); 
 
 // find the command using the type id
-$command = $settings['menu.types'][$_GET['type']]['command'];
+$commands = $settings['menu.types'][$_GET['type']]['commands'];
 
-// replace placeholders in the command by using all the data in the options array
-// ie. {id} will be replaced by 1 if 'id' => 1 is in the options array
-foreach($settings['menu.options'][$_GET['option']] as $key => $value) 
+if (!is_array($commands)) $commands = array($commands);
+
+foreach($commands as $command)
 {
-	$command = str_replace('{' . $key . '}', $value, $command);
+	// replace placeholders in the command by using all the data in the options array
+	// ie. {id} will be replaced by 1 if 'id' => 1 is in the options array
+	foreach($settings['menu.options'][$_GET['option']] as $key => $value) 
+	{
+		$command = str_replace('{' . $key . '}', $value, $command);
+	}
+	
+	// execute the command
+	if (!$settings['general.demo']) exec($command);
 }
-
-// execute the command
-if (!$settings['general.demo']) exec($command);

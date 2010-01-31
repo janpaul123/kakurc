@@ -35,15 +35,18 @@ $settings['general.demomessage']       = 'This is a non-functional demo!';
 
 
 // MENU SETTINGS
-// possible settings, including the command to run
+// possible settings, including the commands to run (a single command or an array)
 // specify a class for custom styling, or don't to get a default button (blue)
 $settings['menu.types']['on']          = array(
-                                               'command'    => 'C:/kaku/Kaku.exe {id} 1',
+                                               'commands'   => array(
+                                                                     'C:/kaku/Kaku.exe {id} 0',
+                                                                     'C:/kaku/Kaku.exe {id} 1',
+                                                                    ),
                                                'class'      => 'on',
                                                'title'      => 'ON',
                                               );
 $settings['menu.types']['off']         = array(
-                                               'command'    => 'C:/kaku/Kaku.exe {id} 0',
+                                               'commands'   => 'C:/kaku/Kaku.exe {id} 0',
                                                'class'      => 'off',
                                                'title'      => 'OFF',
                                               );

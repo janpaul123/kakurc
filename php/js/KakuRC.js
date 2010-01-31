@@ -90,7 +90,7 @@ var KakuRC = new function () {
 					}
 				}
 			};
-			setTimeout(KakuRC.webcams[id].errorTimer, 5000);
+			setTimeout(KakuRC.webcams[id].errorTimer, Math.max(5000, KakuRC.webcamsInterval));
 			
 			// load the new cam image
 			$newCam.attr('src', url);
@@ -144,6 +144,7 @@ var KakuRC = new function () {
 			}
 		});
 		$('#webcam-interval').text(KakuRC.getIntervalText(KakuRC.webcamsInterval));
+		$('#webcam-timer').click(function(e){ $('#webcam-slider').click(e); });
 	}
 	
 	this.addMenuHandler = function(menuId, linkId, optionId, typeId) {

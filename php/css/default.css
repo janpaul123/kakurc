@@ -243,8 +243,6 @@ h1 {
 	-moz-border-radius        : 8px;
 	-webkit-border-radius     : 8px;
 	display                   : none;
-	margin-right              : -1px;
-	margin-bottom             : -1px;
 }
 
 .ui-slider { position: relative; text-align: left; }
@@ -309,8 +307,8 @@ h1 {
 
 #webcam-timer {
 	position                  : absolute;
-	left                      : 151px;
-	top                       : 4px;
+	left                      : 0px;
+	top                       : 0px;
 	background-color          : #666666;
 	border                    : 1px solid #666666;
 	width                     : 0px;
