@@ -3,3 +3,24 @@ kakurc stands for klik-aan-klik-uit room control, which is a home automation sys
 This piece of software allows users of the  system - typically students with a single room or few rooms - to control devices using a webinterface.
 
 It's also possible to hook up webcams, so you can actually see the consequences of hitting buttons, or simply to keep an eye on your property and surroundings.
+
+Installation instructions:
+ - Set up a webserver (apache or WAMP or whatever) and put the php directory in the webroot
+ - Copy user/config.php.default to user/config.php and adjust it to your preferences
+ - Put the vb directory somewhere on the disk and adjust the path to it in the user/config.php
+ - Secure your webserver using Apache Auth and SSL or some other form of security
+
+Upgrading instructions:
+ - Make a backup of your user folder
+ - Throw away the php directory
+ - Copy the new directory
+ - Put back the user folder
+ - Check config.php.default to see new options
+
+Credits:
+ - KlikAanKlikUit for the DLL
+ - Jan Paul Posma
+ - Icons: http://www.famfamfam.com/lab/icons/silk/
+
+License:
+ - This software is licensed under the GPLv3, see the LICENSE file
