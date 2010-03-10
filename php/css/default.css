@@ -20,8 +20,8 @@ body {
 	font-family               : Bitstream Vera,Vera,Verdana,Arial;
 	color                     : #EEEEEE;
 	text-shadow               : 1px 1px 1px black;
-	background                : -webkit-gradient(linear, 50% 0, 50% 100%, from(black), to(#222222));
 	background                : -moz-linear-gradient(top, black, #222222);
+	height                    : 100%;
 }
 
 ul {

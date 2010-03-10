@@ -52,11 +52,13 @@ var KakuRC = new function () {
 				KakuRC.webcams[id].errorTimer = null;
 				
 				// clean up old images
-				$('#' + id + ' img').remove();
+				var old = $('#' + id + ' img');
 				
 				// show the new image
 				$('#' + id).show();
 				$('#' + id).append($newCam);
+				
+				old.remove();
 				
 				// fade out error and shadow divs
 				$('#error-'  + id).fadeOut('medium');
@@ -148,7 +150,7 @@ var KakuRC = new function () {
 	}
 	
 	this.addMenuHandler = function(menuId, linkId, optionId, typeId) {
-		$('#' + linkId).click(function(){
+		$('#' + linkId).click(function(e){
 			$('#' + menuId + ' .loader').fadeIn('fast');
 			$.ajax({
 				url: 'execute.php',
@@ -157,6 +159,7 @@ var KakuRC = new function () {
 					$('#' + menuId + ' .loader').fadeOut('medium');
 				}
 			});
+			e.preventDefault();
 		})
 	}
 	
